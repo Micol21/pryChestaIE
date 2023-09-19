@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace pryChestaIE
 {
-    public partial class frmCargarProveedor : Form
+    public partial class btnCargarProveedor : Form
     {
-        public frmCargarProveedor()
+        public btnCargarProveedor()
         {
             InitializeComponent();
         }
