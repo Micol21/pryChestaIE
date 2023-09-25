@@ -35,9 +35,10 @@
             // 
             // btnCargarArchivo
             // 
-            this.btnCargarArchivo.Location = new System.Drawing.Point(109, 101);
+            this.btnCargarArchivo.Location = new System.Drawing.Point(83, 260);
+            this.btnCargarArchivo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCargarArchivo.Name = "btnCargarArchivo";
-            this.btnCargarArchivo.Size = new System.Drawing.Size(162, 52);
+            this.btnCargarArchivo.Size = new System.Drawing.Size(122, 42);
             this.btnCargarArchivo.TabIndex = 0;
             this.btnCargarArchivo.Text = "Cargar Archivo";
             this.btnCargarArchivo.UseVisualStyleBackColor = true;
@@ -46,20 +47,23 @@
             // grilla
             // 
             this.grilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grilla.Location = new System.Drawing.Point(136, 234);
+            this.grilla.Location = new System.Drawing.Point(71, 76);
+            this.grilla.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grilla.Name = "grilla";
             this.grilla.RowHeadersWidth = 51;
             this.grilla.RowTemplate.Height = 24;
-            this.grilla.Size = new System.Drawing.Size(462, 150);
+            this.grilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grilla.Size = new System.Drawing.Size(346, 122);
             this.grilla.TabIndex = 1;
             // 
             // frmPantallaABM
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 474);
+            this.ClientSize = new System.Drawing.Size(600, 385);
             this.Controls.Add(this.grilla);
             this.Controls.Add(this.btnCargarArchivo);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmPantallaABM";
             this.Text = "frmPantallaABM";
             ((System.ComponentModel.ISupportInitialize)(this.grilla)).EndInit();
