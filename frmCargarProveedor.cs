@@ -42,5 +42,13 @@ namespace pryChestaIE
             txtLiquidador.Text = " ";
 
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FrmPrincipal form1 = new FrmPrincipal();
+            form1.Show();
+
+        }
     }
 }

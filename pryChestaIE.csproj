@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmCargar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCargar.Designer.cs">
+      <DependentUpon>FrmCargar.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCargarProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmCargarProveedor.Designer.cs">
       <DependentUpon>frmCargarProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLista.Designer.cs">
+      <DependentUpon>FrmLista.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMostrarProveedor.cs">
       <SubType>Form</SubType>
@@ -72,8 +84,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmCargar.resx">
+      <DependentUpon>FrmCargar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCargarProveedor.resx">
       <DependentUpon>frmCargarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLista.resx">
+      <DependentUpon>FrmLista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMostrarProveedor.resx">
       <DependentUpon>frmMostrarProveedor.cs</DependentUpon>
@@ -109,6 +127,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\857042ce4db2b08b32ce2b60394bfdbbd5ba1ff26ca82ff84651507ff9b5c8c67fc51b12feb50b61_rw_1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

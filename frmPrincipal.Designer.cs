@@ -72,8 +72,9 @@
             // pantallaABMToolStripMenuItem
             // 
             this.pantallaABMToolStripMenuItem.Name = "pantallaABMToolStripMenuItem";
-            this.pantallaABMToolStripMenuItem.Size = new System.Drawing.Size(111, 24);
-            this.pantallaABMToolStripMenuItem.Text = "Pantalla ABM";
+            this.pantallaABMToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
+            this.pantallaABMToolStripMenuItem.Text = "Mostrar Lista";
+            this.pantallaABMToolStripMenuItem.Click += new System.EventHandler(this.pantallaABMToolStripMenuItem_Click);
             // 
             // FrmPrincipal
             // 
@@ -86,6 +87,7 @@
             this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmPrincipal";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmPrincipal_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

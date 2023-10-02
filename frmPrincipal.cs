@@ -30,5 +30,17 @@ namespace pryChestaIE
             frmMostrarProveedor form1 = new frmMostrarProveedor();
             form1.Show();
         }
+
+        private void FrmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pantallaABMToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmLista form1 = new FrmLista();
+            form1.Show();
+        }
     }
 }
