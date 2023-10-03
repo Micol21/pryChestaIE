@@ -24,7 +24,7 @@ namespace pryChestaIE
         {
             TreeNode rootNode;
 
-            DirectoryInfo info = new DirectoryInfo(@"../..");
+            DirectoryInfo info = new DirectoryInfo(@"../..");//se crea una nueva instacia de la clase
             if (info.Exists)
             {
                 rootNode = new TreeNode(info.Name);
@@ -37,15 +37,15 @@ namespace pryChestaIE
         private void GetDirectories(DirectoryInfo[] subDirs,
             TreeNode nodeToAddTo)
         {
-            TreeNode aNode;
-            DirectoryInfo[] subSubDirs;
-            foreach (DirectoryInfo subDir in subDirs)
+            TreeNode aNode;//Se declara una variable `aNode` de tipo `TreeNode`, que se utilizará para representar un nodo del árbol de directorios
+            DirectoryInfo[] subSubDirs;// Se declara un arreglo de objetos,  que se utilizará para almacenar los subdirectorios del directorio actual representado por subDir
+            foreach (DirectoryInfo subDir in subDirs)//Se inicia un bucle foreach para recorrer cada objeto DirectoryInfode la colección subDirs
             {
-                aNode = new TreeNode(subDir.Name, 0, 0);
-                aNode.Tag = subDir;
-                aNode.ImageKey = "folder";
+                aNode = new TreeNode(subDir.Name, 0, 0);//Se crea un nuevo nodo TreeNodellamado aNode
+                aNode.Tag = subDir; //Se asigna el objeto subDir la propiedad Tagdel nodo aNode
+                aNode.ImageKey = "folder";//Se establece la clave de imagen del nodo aNodecomo "carpeta"
                 subSubDirs = subDir.GetDirectories();
-                if (subSubDirs.Length != 0)
+                if (subSubDirs.Length != 0)//Se verifica si hay subdirectorios dentro del directorio actual.
                 {
                     GetDirectories(subSubDirs, aNode);
                 }
