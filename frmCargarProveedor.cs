@@ -49,7 +49,7 @@ namespace pryChestaIE
             string leerLinea;
             string[] separarDatos;
             leerLinea = sr.ReadLine();
-
+            
 
             separarDatos = leerLinea.Split(';');
 
@@ -57,15 +57,23 @@ namespace pryChestaIE
             for (int indice = 0; indice < separarDatos.Length; indice++)
             {
                 dgvDatos.Columns.Add(separarDatos[indice], separarDatos[indice]);
+                
+
             }
+            
 
             while (sr.EndOfStream == false)
             {
                 leerLinea = sr.ReadLine();
                 separarDatos = leerLinea.Split(';');
                 dgvDatos.Rows.Add(separarDatos);
+                
             }
+            
             sr.Close();
+
+            
+
 
 
         }
@@ -91,6 +99,11 @@ namespace pryChestaIE
             Int32 x = dgvDatos.CurrentCell.RowIndex;
             dgvDatos.Rows.RemoveAt(x);
             MessageBox.Show("Fila eliminada ");
+        }
+
+        private void btnMostrar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
