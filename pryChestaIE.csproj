@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClsAccesoDatos.cs" />
     <Compile Include="FrmCargar.cs">
       <SubType>Form</SubType>
     </Compile>
