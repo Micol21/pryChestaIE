@@ -20,7 +20,7 @@ namespace pryChestaIE
         private void cargarProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            btnCargarProveedor form1 = new btnCargarProveedor();
+            frmCargarProveedor form1 = new frmCargarProveedor();
             form1.Show();
         }
 

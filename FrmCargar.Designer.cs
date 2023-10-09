@@ -72,6 +72,7 @@
             this.Controls.Add(this.prbPorcentaje);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmCargar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCargar";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -19,12 +19,18 @@ namespace pryChestaIE
         }
         string leerLinea;
         string[] separarDatos;
-        private void btnMostrar_Click(object sender, EventArgs e)
+        
+        public void btnMostrar_Click(object sender, EventArgs e)
         {
             StreamReader sr = new StreamReader("baseproveedores.csv");
+            
 
+            
             leerLinea = sr.ReadLine();
+            
+           
             separarDatos = leerLinea.Split(';');
+            
 
             for (int indice = 0; indice < separarDatos.Length; indice++)
             {
@@ -37,8 +43,37 @@ namespace pryChestaIE
                 separarDatos = leerLinea.Split(';');
                 grilla.Rows.Add(separarDatos);
             }
-
             sr.Close();
+
+            string DatoLeido;
+
+           // StreamReader AD = new StreamReader("Nuevo Proveedor");//Abrir AD 
+            //DatoLeido = AD.ReadLine();//Leer AD
+            //while (DatoLeido != null)
+           // {
+                
+               // grilla.Rows.Add(DatoLeido);
+                //DatoLeido = AD.ReadLine();//Leer AD
+           // }
+            //AD.Close();//Cerrar AD
+            //AD.Dispose();//Liberar el objeto 
+
+
+
+        }
+
+        public void Listar(DataGridView grilla)
+        {
+            string DatoLeido;
+            StreamReader AD = new StreamReader("Nuevo Proveedor");//Abrir AD 
+            DatoLeido = AD.ReadLine();//Leer AD
+            while (DatoLeido != null)
+            {
+                grilla.Rows.Add(DatoLeido);
+                DatoLeido = AD.ReadLine();//Leer AD
+            }
+            AD.Close();//Cerrar AD
+            AD.Dispose();//Liberar el objeto 
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -46,6 +81,16 @@ namespace pryChestaIE
             this.Close();
             FrmPrincipal form1 = new FrmPrincipal();
             form1.Show();
+        }
+
+        public void btnEliminar_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

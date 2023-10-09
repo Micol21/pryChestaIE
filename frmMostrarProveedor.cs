@@ -47,9 +47,11 @@ namespace pryChestaIE
                 subSubDirs = subDir.GetDirectories();
                 if (subSubDirs.Length != 0)//Se verifica si hay subdirectorios dentro del directorio actual.
                 {
-                    GetDirectories(subSubDirs, aNode);
+                    GetDirectories(subSubDirs, aNode);//Se llama de forma recursiva a la función GetDirectories, pasando como argumentos la lista de subdirectorios  y el nodo
+                    //Esto permite construir la estructura de directorios de manera recursiva, agregando nodos para los subdirectorios dentro del subdirectorio actual.
                 }
-                nodeToAddTo.Nodes.Add(aNode);
+                nodeToAddTo.Nodes.Add(aNode);//Finalmente, el nodo aNodese agrega como hijo al nodo nodeToAddTo,que es el nodo al que se agregarán todos los subdirectorios. 
+                //Esto construye el árbol de directorios,donde nodeToAddTorepresenta el nodo del directorio padre y aNoderepresenta uno de sus subdirectorios.
             }
         }
         private void frmMostrarProveedor_Load(object sender, EventArgs e)
