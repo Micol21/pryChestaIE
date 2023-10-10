@@ -59,6 +59,12 @@
     <Compile Include="frmCargarProveedor.Designer.cs">
       <DependentUpon>frmCargarProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmConectar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConectar.Designer.cs">
+      <DependentUpon>FrmConectar.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLista.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCargarProveedor.resx">
       <DependentUpon>frmCargarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConectar.resx">
+      <DependentUpon>FrmConectar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLista.resx">
       <DependentUpon>FrmLista.cs</DependentUpon>
