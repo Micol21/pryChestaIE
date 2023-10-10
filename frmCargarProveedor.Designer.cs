@@ -50,14 +50,14 @@
             this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnMostrar = new System.Windows.Forms.Button();
+            this.btnConectar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCargar
             // 
             this.btnCargar.Location = new System.Drawing.Point(74, 508);
-            this.btnCargar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCargar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(111, 47);
             this.btnCargar.TabIndex = 0;
@@ -156,7 +156,7 @@
             // txtNumero
             // 
             this.txtNumero.Location = new System.Drawing.Point(185, 267);
-            this.txtNumero.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNumero.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(132, 22);
             this.txtNumero.TabIndex = 0;
@@ -164,7 +164,7 @@
             // txtApertura
             // 
             this.txtApertura.Location = new System.Drawing.Point(195, 321);
-            this.txtApertura.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtApertura.Margin = new System.Windows.Forms.Padding(4);
             this.txtApertura.Name = "txtApertura";
             this.txtApertura.Size = new System.Drawing.Size(132, 22);
             this.txtApertura.TabIndex = 1;
@@ -172,7 +172,7 @@
             // txtJuzgado
             // 
             this.txtJuzgado.Location = new System.Drawing.Point(195, 377);
-            this.txtJuzgado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtJuzgado.Margin = new System.Windows.Forms.Padding(4);
             this.txtJuzgado.Name = "txtJuzgado";
             this.txtJuzgado.Size = new System.Drawing.Size(132, 22);
             this.txtJuzgado.TabIndex = 2;
@@ -180,7 +180,7 @@
             // txtDireccion
             // 
             this.txtDireccion.Location = new System.Drawing.Point(198, 434);
-            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(132, 22);
             this.txtDireccion.TabIndex = 3;
@@ -188,7 +188,7 @@
             // txtEntidad
             // 
             this.txtEntidad.Location = new System.Drawing.Point(709, 455);
-            this.txtEntidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEntidad.Margin = new System.Windows.Forms.Padding(4);
             this.txtEntidad.Name = "txtEntidad";
             this.txtEntidad.Size = new System.Drawing.Size(132, 22);
             this.txtEntidad.TabIndex = 4;
@@ -196,7 +196,7 @@
             // txtExpediente
             // 
             this.txtExpediente.Location = new System.Drawing.Point(709, 265);
-            this.txtExpediente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtExpediente.Margin = new System.Windows.Forms.Padding(4);
             this.txtExpediente.Name = "txtExpediente";
             this.txtExpediente.Size = new System.Drawing.Size(132, 22);
             this.txtExpediente.TabIndex = 5;
@@ -204,7 +204,7 @@
             // txtJurisdiccion
             // 
             this.txtJurisdiccion.Location = new System.Drawing.Point(709, 326);
-            this.txtJurisdiccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtJurisdiccion.Margin = new System.Windows.Forms.Padding(4);
             this.txtJurisdiccion.Name = "txtJurisdiccion";
             this.txtJurisdiccion.Size = new System.Drawing.Size(132, 22);
             this.txtJurisdiccion.TabIndex = 6;
@@ -212,7 +212,7 @@
             // txtLiquidador
             // 
             this.txtLiquidador.Location = new System.Drawing.Point(709, 381);
-            this.txtLiquidador.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLiquidador.Margin = new System.Windows.Forms.Padding(4);
             this.txtLiquidador.Name = "txtLiquidador";
             this.txtLiquidador.Size = new System.Drawing.Size(132, 22);
             this.txtLiquidador.TabIndex = 7;
@@ -257,23 +257,22 @@
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // btnMostrar
+            // btnConectar
             // 
-            this.btnMostrar.Location = new System.Drawing.Point(239, 508);
-            this.btnMostrar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMostrar.Name = "btnMostrar";
-            this.btnMostrar.Size = new System.Drawing.Size(111, 47);
-            this.btnMostrar.TabIndex = 21;
-            this.btnMostrar.Text = "MOSTRAR";
-            this.btnMostrar.UseVisualStyleBackColor = true;
-            this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
+            this.btnConectar.Location = new System.Drawing.Point(255, 520);
+            this.btnConectar.Name = "btnConectar";
+            this.btnConectar.Size = new System.Drawing.Size(123, 45);
+            this.btnConectar.TabIndex = 21;
+            this.btnConectar.Text = "CONECTAR";
+            this.btnConectar.UseVisualStyleBackColor = true;
+            this.btnConectar.Click += new System.EventHandler(this.btnConectar_Click);
             // 
             // frmCargarProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 597);
-            this.Controls.Add(this.btnMostrar);
+            this.Controls.Add(this.btnConectar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.dgvDatos);
@@ -329,6 +328,6 @@
         private System.Windows.Forms.DataGridView dgvDatos;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnMostrar;
+        private System.Windows.Forms.Button btnConectar;
     }
 }

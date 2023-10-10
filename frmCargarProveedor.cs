@@ -43,6 +43,8 @@ namespace pryChestaIE
             txtJurisdiccion.Text = " ";
             txtLiquidador.Text = " ";
 
+            
+            
             StreamReader sr = new StreamReader("baseproveedores.csv");
 
 
@@ -104,6 +106,13 @@ namespace pryChestaIE
         private void btnMostrar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnConectar_Click(object sender, EventArgs e)
+        {
+            ClsAccesoDatos objLogin = new ClsAccesoDatos();
+
+            objLogin.AbrirBD();
         }
     }
 }
