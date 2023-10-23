@@ -11,55 +11,102 @@ namespace pryChestaIE
 {
     internal class ClsAccesoDatos
     {
-        
+        OleDbConnection conexionBD = new OleDbConnection();
+        OleDbCommand comandoBD = new OleDbCommand();
+        OleDbDataReader lectorBD;
 
-        //Abrir la base de datos 
+
+        string cadenaConexion = @"Provider = Microsoft.ACE.OLEDB.12.0;" + " Data Source = ..\\..\\Resources\\EL_CLUB.accdb";
+
+        public string estadoConexion = "";
+
+        public string datosTabla = "";
+
+
         public void AbrirBD()
 
-
-        {
+           {
 
             try
             {
-                OleDbConnection objcnn = new OleDbConnection();
-                OleDbCommand objcmd = new OleDbCommand();
-                OleDbDataReader objdr;
-                // asignar la cadena al objeto conexión
-                string conexionuno = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = .../.../Resources/BaseProveedores.accdb";
-                // definir la cadena de conexión
-                objcnn.ConnectionString = conexionuno;
-
-                // abrir la conexión con la base de datos
-                objcnn.Open();
-
-                // establecer las propiedades al objeto comando
-                objcmd.Connection = objcnn;
-                objcmd.CommandType = CommandType.TableDirect;
-                objcmd.CommandText = "users";// nombrede la tabla a leer
-                                             // ejecutar la lectura de la tabla con un objetoDataReader
-                objdr = objcmd.ExecuteReader();
-
-                if (objdr.HasRows)
-                {
-                    string datos = "";
-                    while (objdr.Read())// leer mientras existanregistros
-                    {
-                        datos += objdr.GetString(0) + ", " + objdr.GetString(1) + "\r\n";
-                    }
-                    MessageBox.Show(datos, "Tabla de Cantantes– DataReader");
-
-                }
-                objcnn.Close();
+                conexionBD = new OleDbConnection();
+                conexionBD.ConnectionString = cadenaConexion;
+                conexionBD.Open();
+                estadoConexion = "Conectado";
             }
         
             catch (Exception ex ){
                 //iria un mensaje
-                MessageBox.Show(ex.Message);
-                throw;
+                
+             estadoConexion = "Error: " + ex.Message;
             }
             
         }
-       
-        //Validar usuario 
+
+        public void TraerDatos(DataGridView grilla)
+        {
+            comandoBD = new OleDbCommand();
+
+            comandoBD.Connection = conexionBD;
+            comandoBD.CommandType = System.Data.CommandType.TableDirect;  //q tipo de operacion quierp hacer y que me traiga TOD la tabla con el tabledirect
+            comandoBD.CommandText = "SOCIOS"; //Que tabla traigo
+
+            lectorBD = comandoBD.ExecuteReader(); //abre la tabla y muestra por renglon
+            grilla.Columns.Add("Nombre", "Nombre");
+            grilla.Columns.Add("Apellido", "Apellido");
+            grilla.Columns.Add("Pais", "Pais");
+
+
+            if (lectorBD.HasRows) //SI TIENE FILAS
+            {
+                while (lectorBD.Read()) //mientras pueda leer, mostrar (leer)
+                {
+                    datosTabla += "-" + lectorBD[0]; //dato d la comlumna 0
+                    grilla.Rows.Add(lectorBD[1], lectorBD[2], lectorBD[3]);
+                }
+
+            }
+
+        }
+
+
+        public void BuscarPorID(int codigo)
+        {
+
+            comandoBD = new OleDbCommand();
+
+            comandoBD.Connection = conexionBD;
+            comandoBD.CommandType = System.Data.CommandType.TableDirect;  //q tipo de operacion quierp hacer y que me traiga TOD la tabla con el tabledirect
+            comandoBD.CommandText = "SOCIOS"; //Que tabla traigo
+
+            lectorBD = comandoBD.ExecuteReader(); //abre la tabla y muestra por renglon
+
+
+
+            if (lectorBD.HasRows) //SI TIENE FILAS
+            {
+                bool Find = false;
+                while (lectorBD.Read()) //mientras pueda leer, mostrar (leer)
+                {
+                    if (int.Parse(lectorBD[0].ToString()) == codigo)
+                    {
+
+                        //datosTabla += "-" + lectorBD[0]; //dato d la comlumna 0
+                        MessageBox.Show("Cliente Existente" + lectorBD[0], "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Find = true;
+                        break;
+                    }
+
+                }
+                if (Find = false)
+                {
+
+                    MessageBox.Show("NO Existente" + lectorBD[0], "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
+            }
+        }
+
     }
 }
+
