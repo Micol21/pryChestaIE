@@ -30,18 +30,18 @@
         {
             this.btnMostrar = new System.Windows.Forms.Button();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
-            this.lblConexion = new System.Windows.Forms.Label();
-            this.lblDatos = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
             this.SuspendLayout();
             // 
             // btnMostrar
             // 
-            this.btnMostrar.Location = new System.Drawing.Point(52, 386);
+            this.btnMostrar.Location = new System.Drawing.Point(253, 382);
             this.btnMostrar.Name = "btnMostrar";
-            this.btnMostrar.Size = new System.Drawing.Size(75, 23);
+            this.btnMostrar.Size = new System.Drawing.Size(86, 23);
             this.btnMostrar.TabIndex = 0;
             this.btnMostrar.Text = "MOSTRAR";
             this.btnMostrar.UseVisualStyleBackColor = true;
@@ -55,50 +55,50 @@
             this.dgvGrilla.Size = new System.Drawing.Size(442, 211);
             this.dgvGrilla.TabIndex = 1;
             // 
-            // lblConexion
-            // 
-            this.lblConexion.AutoSize = true;
-            this.lblConexion.Location = new System.Drawing.Point(52, 325);
-            this.lblConexion.Name = "lblConexion";
-            this.lblConexion.Size = new System.Drawing.Size(43, 13);
-            this.lblConexion.TabIndex = 2;
-            this.lblConexion.Text = "Estado ";
-            // 
-            // lblDatos
-            // 
-            this.lblDatos.AutoSize = true;
-            this.lblDatos.Location = new System.Drawing.Point(230, 325);
-            this.lblDatos.Name = "lblDatos";
-            this.lblDatos.Size = new System.Drawing.Size(13, 13);
-            this.lblDatos.TabIndex = 3;
-            this.lblDatos.Text = "..";
-            // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(233, 373);
+            this.txtBuscar.Location = new System.Drawing.Point(61, 334);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(100, 20);
             this.txtBuscar.TabIndex = 4;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(385, 373);
+            this.btnBuscar.Location = new System.Drawing.Point(387, 382);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(85, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(95, 23);
             this.btnBuscar.TabIndex = 5;
             this.btnBuscar.Text = "BUSCAR";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Location = new System.Drawing.Point(61, 382);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(130, 23);
+            this.btnNuevo.TabIndex = 6;
+            this.btnNuevo.Text = "Nuevo Registro ";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(217, 334);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(100, 20);
+            this.txtPassword.TabIndex = 7;
             // 
             // FrmConectar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(594, 450);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtBuscar);
-            this.Controls.Add(this.lblDatos);
-            this.Controls.Add(this.lblConexion);
             this.Controls.Add(this.dgvGrilla);
             this.Controls.Add(this.btnMostrar);
             this.Name = "FrmConectar";
@@ -114,9 +114,9 @@
 
         private System.Windows.Forms.Button btnMostrar;
         private System.Windows.Forms.DataGridView dgvGrilla;
-        private System.Windows.Forms.Label lblConexion;
-        private System.Windows.Forms.Label lblDatos;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.TextBox txtPassword;
     }
 }

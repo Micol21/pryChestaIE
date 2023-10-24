@@ -10,7 +10,7 @@ namespace pryChestaIE
     {
         public void LogInicioSesion()
         {
-
+            
         }
     }
 }

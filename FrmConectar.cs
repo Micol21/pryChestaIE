@@ -31,8 +31,7 @@ namespace pryChestaIE
         {
             objBaseDeDatos = new ClsAccesoDatos();
             objBaseDeDatos.AbrirBD();
-            lblConexion.Text = objBaseDeDatos.estadoConexion;
-            lblDatos.Text = objBaseDeDatos.datosTabla;
+            
             objBaseDeDatos.TraerDatos(dgvGrilla);
             
             
@@ -48,6 +47,16 @@ namespace pryChestaIE
            objBaseDeDatos.BuscarPorID(int.Parse(txtBuscar.Text));
             
             //objBaseDatos.BuscarPorID(int.Parse(txtBuscar.Text));
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            objBaseDeDatos.nuevoregistro(txtBuscar.Text,txtPassword.Text);
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

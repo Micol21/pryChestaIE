@@ -18,7 +18,7 @@ namespace pryChestaIE
         OleDbDataAdapter objda;
 
 
-        string cadenaConexion = @"Provider = Microsoft.ACE.OLEDB.12.0;" + " Data Source = ..\\..\\Resources\\EL_CLUB.accdb";
+        string cadenaConexion = @"Provider = Microsoft.ACE.OLEDB.12.0;" + " Data Source = ..\\..\\Resources\\BaseProveedores.accdb";
 
         public string estadoConexion = "";
 
@@ -50,21 +50,20 @@ namespace pryChestaIE
             comandoBD = new OleDbCommand();
 
             comandoBD.Connection = conexionBD;
-            comandoBD.CommandType = System.Data.CommandType.TableDirect;  //q tipo de operacion quierp hacer y que me traiga TOD la tabla con el tabledirect
-            comandoBD.CommandText = "SOCIOS"; //Que tabla traigo
+            comandoBD.CommandType = System.Data.CommandType.TableDirect;  //q tipo de operacion quiero hacer y que me traiga TODA la tabla con el tabledirect
+            comandoBD.CommandText = "Users"; //Que tabla traigo
 
             lectorBD = comandoBD.ExecuteReader(); //abre la tabla y muestra por renglon
             grilla.Columns.Add("Nombre", "Nombre");
             grilla.Columns.Add("Apellido", "Apellido");
             grilla.Columns.Add("Pais", "Pais");
 
-
             if (lectorBD.HasRows) //SI TIENE FILAS
             {
                 while (lectorBD.Read()) //mientras pueda leer, mostrar (leer)
                 {
                     datosTabla += "-" + lectorBD[0]; //dato d la comlumna 0
-                    grilla.Rows.Add(lectorBD[1], lectorBD[2], lectorBD[3]);
+                    grilla.Rows.Add(lectorBD[0], lectorBD[1], lectorBD[2]);
                 }
 
             }
@@ -111,16 +110,20 @@ namespace pryChestaIE
             }
             
         }
-        public void nuevoregistro()
+        public void nuevoregistro(string Nombre,string Password)
         {
+
+
+
             // obtenemos una referencia a la tabla de users
-            DataTable dt = objds.Tables["Users"];
+            DataTable dt = new DataTable();
+                dt = objds.Tables["Users"];
             // creamos el nuevo DataRow con la estructura de campos de la tabla users
             DataRow dr = dt.NewRow();
 
             // asignamos los valores a todos los campos del DataRow
-            dr["Nombre"] = "Analia";
-            dr["ID"] = "222";
+            dr["Nombre"] = Nombre;
+            dr["ID"] = Password;
             // agregamos el DataRow a la tabla de Cantantes
             dt.Rows.Add(dr);
 
