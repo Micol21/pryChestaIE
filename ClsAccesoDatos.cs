@@ -11,9 +11,11 @@ namespace pryChestaIE
 {
     internal class ClsAccesoDatos
     {
-        OleDbConnection conexionBD = new OleDbConnection();
-        OleDbCommand comandoBD = new OleDbCommand();
+        OleDbConnection conexionBD;
+        OleDbCommand comandoBD;
         OleDbDataReader lectorBD;
+        DataSet objds = new DataSet();
+        OleDbDataAdapter objda;
 
 
         string cadenaConexion = @"Provider = Microsoft.ACE.OLEDB.12.0;" + " Data Source = ..\\..\\Resources\\EL_CLUB.accdb";
@@ -104,7 +106,32 @@ namespace pryChestaIE
                     MessageBox.Show("NO Existente" + lectorBD[0], "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
+
+                
             }
+            
+        }
+        public void nuevoregistro()
+        {
+            // obtenemos una referencia a la tabla de users
+            DataTable dt = objds.Tables["Users"];
+            // creamos el nuevo DataRow con la estructura de campos de la tabla users
+            DataRow dr = dt.NewRow();
+
+            // asignamos los valores a todos los campos del DataRow
+            dr["Nombre"] = "Analia";
+            dr["ID"] = "222";
+            // agregamos el DataRow a la tabla de Cantantes
+            dt.Rows.Add(dr);
+
+            // creamos el objeto OledBCommandBuilder pasando como parámetro el DataAdapter
+            OleDbCommandBuilder cb = new OleDbCommandBuilder(objda);
+
+            // actualizamos la base con los cambios realizados
+
+            objda.Update(objds, "Users");
+
+
         }
 
     }

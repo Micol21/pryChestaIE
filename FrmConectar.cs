@@ -27,7 +27,7 @@ namespace pryChestaIE
 
         }
 
-        private void FrmConectar_Load(object sender, EventArgs e)
+        public void FrmConectar_Load(object sender, EventArgs e)
         {
             objBaseDeDatos = new ClsAccesoDatos();
             objBaseDeDatos.AbrirBD();
