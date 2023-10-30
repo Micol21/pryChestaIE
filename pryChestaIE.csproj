@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="ClsAccesoDatos.cs" />
     <Compile Include="clsLogs.cs" />
+    <Compile Include="ClsUsuario.cs" />
     <Compile Include="FrmCargar.cs">
       <SubType>Form</SubType>
     </Compile>

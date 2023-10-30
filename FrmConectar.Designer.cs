@@ -34,12 +34,17 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lblEstadoConectado = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblConectado = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnMostrar
             // 
-            this.btnMostrar.Location = new System.Drawing.Point(253, 382);
+            this.btnMostrar.Location = new System.Drawing.Point(387, 348);
             this.btnMostrar.Name = "btnMostrar";
             this.btnMostrar.Size = new System.Drawing.Size(86, 23);
             this.btnMostrar.TabIndex = 0;
@@ -57,7 +62,7 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(61, 334);
+            this.txtBuscar.Location = new System.Drawing.Point(61, 304);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(100, 20);
             this.txtBuscar.TabIndex = 4;
@@ -65,7 +70,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(387, 382);
+            this.btnBuscar.Location = new System.Drawing.Point(387, 310);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(95, 23);
             this.btnBuscar.TabIndex = 5;
@@ -75,7 +80,7 @@
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(61, 382);
+            this.btnNuevo.Location = new System.Drawing.Point(387, 377);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(130, 23);
             this.btnNuevo.TabIndex = 6;
@@ -85,16 +90,48 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(217, 334);
+            this.txtPassword.Location = new System.Drawing.Point(61, 330);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(100, 20);
             this.txtPassword.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(253, 310);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "label1";
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblEstadoConectado,
+            this.lblConectado});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 428);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(594, 22);
+            this.statusStrip1.TabIndex = 9;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // lblEstadoConectado
+            // 
+            this.lblEstadoConectado.Name = "lblEstadoConectado";
+            this.lblEstadoConectado.Size = new System.Drawing.Size(0, 17);
+            // 
+            // lblConectado
+            // 
+            this.lblConectado.Name = "lblConectado";
+            this.lblConectado.Size = new System.Drawing.Size(0, 17);
             // 
             // FrmConectar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(594, 450);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnBuscar);
@@ -105,6 +142,8 @@
             this.Text = "FrmConectar";
             this.Load += new System.EventHandler(this.FrmConectar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,5 +157,9 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel lblEstadoConectado;
+        private System.Windows.Forms.ToolStripStatusLabel lblConectado;
     }
 }
