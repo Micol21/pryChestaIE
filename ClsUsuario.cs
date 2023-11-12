@@ -8,6 +8,7 @@ using System.Data;
 using System.IO;
 using System.Data.OleDb;
 using System.CodeDom.Compiler;
+using System.Data.Odbc;
 
 namespace pryChestaIE
 {
@@ -21,7 +22,7 @@ namespace pryChestaIE
         OleDbDataReader lectorusuario;
 
         OleDbDataAdapter adaptadorBD;
-        DataSet objDS;
+        DataSet objDS = new DataSet();
 
         
 
@@ -43,7 +44,7 @@ namespace pryChestaIE
                 conexionusuario.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + rutaArchivo;
                 conexionusuario.Open();
 
-                objDS = new DataSet();
+                 
 
                 estadoConexion = "Conectado";
             }

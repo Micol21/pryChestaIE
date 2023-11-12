@@ -16,8 +16,16 @@ namespace pryChestaIE
         public frmCargarProveedor()
         {
             InitializeComponent();
+            this.KeyPreview = true; // Habilita la previsualización de teclas en el formulario
+            this.KeyDown += new KeyEventHandler(FrmCargarProveedor_KeyDown); // Suscribe el método Form1_KeyDown al evento KeyDown
         }
-
+        private void FrmCargarProveedor_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close(); // Cierra el formulario cuando se presiona la tecla ESCAPE
+            }
+        }
         public void btnCargar_Click(object sender, EventArgs e)
 
         {

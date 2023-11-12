@@ -50,13 +50,12 @@
             this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnConectar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCargar
             // 
-            this.btnCargar.Location = new System.Drawing.Point(74, 508);
+            this.btnCargar.Location = new System.Drawing.Point(219, 518);
             this.btnCargar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(111, 47);
@@ -219,7 +218,7 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(416, 518);
+            this.btnVolver.Location = new System.Drawing.Point(400, 518);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(121, 47);
             this.btnVolver.TabIndex = 17;
@@ -239,7 +238,7 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(580, 518);
+            this.btnModificar.Location = new System.Drawing.Point(562, 518);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(119, 47);
             this.btnModificar.TabIndex = 19;
@@ -249,7 +248,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(740, 518);
+            this.btnEliminar.Location = new System.Drawing.Point(728, 518);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(113, 47);
             this.btnEliminar.TabIndex = 20;
@@ -257,22 +256,11 @@
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // btnConectar
-            // 
-            this.btnConectar.Location = new System.Drawing.Point(255, 520);
-            this.btnConectar.Name = "btnConectar";
-            this.btnConectar.Size = new System.Drawing.Size(123, 45);
-            this.btnConectar.TabIndex = 21;
-            this.btnConectar.Text = "CONECTAR";
-            this.btnConectar.UseVisualStyleBackColor = true;
-            this.btnConectar.Click += new System.EventHandler(this.btnConectar_Click);
-            // 
             // frmCargarProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 597);
-            this.Controls.Add(this.btnConectar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.dgvDatos);
@@ -296,6 +284,7 @@
             this.Controls.Add(this.btnCargar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmCargarProveedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -328,6 +317,5 @@
         private System.Windows.Forms.DataGridView dgvDatos;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnConectar;
     }
 }

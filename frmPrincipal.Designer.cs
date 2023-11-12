@@ -34,6 +34,7 @@
             this.mostrarProveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pantallaABMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eLCLUBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,7 +45,8 @@
             this.cargarProveedoresToolStripMenuItem,
             this.mostrarProveedorToolStripMenuItem,
             this.toolStripMenuItem1,
-            this.pantallaABMToolStripMenuItem});
+            this.pantallaABMToolStripMenuItem,
+            this.eLCLUBToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(815, 28);
@@ -77,6 +79,13 @@
             this.pantallaABMToolStripMenuItem.Text = "Mostrar Lista";
             this.pantallaABMToolStripMenuItem.Click += new System.EventHandler(this.pantallaABMToolStripMenuItem_Click);
             // 
+            // eLCLUBToolStripMenuItem
+            // 
+            this.eLCLUBToolStripMenuItem.Name = "eLCLUBToolStripMenuItem";
+            this.eLCLUBToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
+            this.eLCLUBToolStripMenuItem.Text = "EL CLUB";
+            this.eLCLUBToolStripMenuItem.Click += new System.EventHandler(this.eLCLUBToolStripMenuItem_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -107,6 +116,7 @@
         private System.Windows.Forms.ToolStripMenuItem mostrarProveedorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem pantallaABMToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eLCLUBToolStripMenuItem;
     }
 }
 

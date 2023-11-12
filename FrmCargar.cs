@@ -27,9 +27,14 @@ namespace pryChestaIE
             {
                 timer1.Stop();
                 this.Hide();
-                FrmPrincipal ventanaprincipal = new FrmPrincipal();
+                FrmLogin ventanaprincipal = new FrmLogin();
                 ventanaprincipal.Show();
             }
+
+        }
+
+        private void FrmCargar_Load(object sender, EventArgs e)
+        {
 
         }
     }

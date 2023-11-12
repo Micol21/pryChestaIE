@@ -74,6 +74,7 @@
             this.Name = "FrmCargar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCargar";
+            this.Load += new System.EventHandler(this.FrmCargar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

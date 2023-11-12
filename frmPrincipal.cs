@@ -42,5 +42,12 @@ namespace pryChestaIE
             FrmLista form1 = new FrmLista();
             form1.Show();
         }
+
+        private void eLCLUBToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmConectar form1 = new FrmConectar();
+            form1.Show();
+        }
     }
 }

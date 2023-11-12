@@ -39,6 +39,9 @@ namespace pryChestaIE
             { estadoConexion = "Error: " + ex.Message; }
         }
 
+
+
+
         public void LogInicioSesionExitoso()
         {
             try
