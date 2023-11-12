@@ -110,9 +110,7 @@ namespace pryChestaIE
 
         private void btnConectar_Click(object sender, EventArgs e)
         {
-            ClsAccesoDatos objLogin = new ClsAccesoDatos();
-
-            objLogin.AbrirBD();
+           
         }
     }
 }

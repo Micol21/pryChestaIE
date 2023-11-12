@@ -29,50 +29,54 @@
         private void InitializeComponent()
         {
             this.btnMostrar = new System.Windows.Forms.Button();
-            this.dgvGrilla = new System.Windows.Forms.DataGridView();
+            this.dgvSocios = new System.Windows.Forms.DataGridView();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblEstadoConectado = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblConectado = new System.Windows.Forms.ToolStripStatusLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
+            this.btnConectar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSocios)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnMostrar
             // 
-            this.btnMostrar.Location = new System.Drawing.Point(387, 348);
+            this.btnMostrar.Location = new System.Drawing.Point(516, 428);
+            this.btnMostrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMostrar.Name = "btnMostrar";
-            this.btnMostrar.Size = new System.Drawing.Size(86, 23);
+            this.btnMostrar.Size = new System.Drawing.Size(115, 28);
             this.btnMostrar.TabIndex = 0;
             this.btnMostrar.Text = "MOSTRAR";
             this.btnMostrar.UseVisualStyleBackColor = true;
             this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
             // 
-            // dgvGrilla
+            // dgvSocios
             // 
-            this.dgvGrilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGrilla.Location = new System.Drawing.Point(40, 55);
-            this.dgvGrilla.Name = "dgvGrilla";
-            this.dgvGrilla.Size = new System.Drawing.Size(442, 211);
-            this.dgvGrilla.TabIndex = 1;
+            this.dgvSocios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSocios.Location = new System.Drawing.Point(53, 68);
+            this.dgvSocios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvSocios.Name = "dgvSocios";
+            this.dgvSocios.RowHeadersWidth = 51;
+            this.dgvSocios.Size = new System.Drawing.Size(589, 260);
+            this.dgvSocios.TabIndex = 1;
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(61, 304);
+            this.txtBuscar.Location = new System.Drawing.Point(81, 374);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(100, 20);
+            this.txtBuscar.Size = new System.Drawing.Size(132, 22);
             this.txtBuscar.TabIndex = 4;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(387, 310);
+            this.btnBuscar.Location = new System.Drawing.Point(516, 382);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(95, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(127, 28);
             this.btnBuscar.TabIndex = 5;
             this.btnBuscar.Text = "BUSCAR";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -80,9 +84,10 @@
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(387, 377);
+            this.btnNuevo.Location = new System.Drawing.Point(516, 464);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(130, 23);
+            this.btnNuevo.Size = new System.Drawing.Size(173, 28);
             this.btnNuevo.TabIndex = 6;
             this.btnNuevo.Text = "Nuevo Registro ";
             this.btnNuevo.UseVisualStyleBackColor = true;
@@ -90,58 +95,58 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(61, 330);
+            this.txtPassword.Location = new System.Drawing.Point(81, 406);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(100, 20);
+            this.txtPassword.Size = new System.Drawing.Size(132, 22);
             this.txtPassword.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(253, 310);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "label1";
             // 
             // statusStrip1
             // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lblEstadoConectado,
-            this.lblConectado});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 428);
+            this.lblEstadoConectado});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 532);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(594, 22);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(792, 22);
             this.statusStrip1.TabIndex = 9;
             this.statusStrip1.Text = "statusStrip1";
+            this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked);
             // 
             // lblEstadoConectado
             // 
             this.lblEstadoConectado.Name = "lblEstadoConectado";
-            this.lblEstadoConectado.Size = new System.Drawing.Size(0, 17);
+            this.lblEstadoConectado.Size = new System.Drawing.Size(0, 16);
             // 
-            // lblConectado
+            // btnConectar
             // 
-            this.lblConectado.Name = "lblConectado";
-            this.lblConectado.Size = new System.Drawing.Size(0, 17);
+            this.btnConectar.Location = new System.Drawing.Point(331, 374);
+            this.btnConectar.Name = "btnConectar";
+            this.btnConectar.Size = new System.Drawing.Size(87, 36);
+            this.btnConectar.TabIndex = 10;
+            this.btnConectar.Text = "Conectar";
+            this.btnConectar.UseVisualStyleBackColor = true;
+            this.btnConectar.Click += new System.EventHandler(this.btnConectar_Click);
             // 
             // FrmConectar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(594, 450);
+            this.ClientSize = new System.Drawing.Size(792, 554);
+            this.Controls.Add(this.btnConectar);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtBuscar);
-            this.Controls.Add(this.dgvGrilla);
+            this.Controls.Add(this.dgvSocios);
             this.Controls.Add(this.btnMostrar);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmConectar";
             this.Text = "FrmConectar";
             this.Load += new System.EventHandler(this.FrmConectar_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSocios)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -152,14 +157,13 @@
         #endregion
 
         private System.Windows.Forms.Button btnMostrar;
-        private System.Windows.Forms.DataGridView dgvGrilla;
+        private System.Windows.Forms.DataGridView dgvSocios;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lblEstadoConectado;
-        private System.Windows.Forms.ToolStripStatusLabel lblConectado;
+        private System.Windows.Forms.Button btnConectar;
     }
 }
