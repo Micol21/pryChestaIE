@@ -84,5 +84,12 @@ namespace pryChestaIE
 
             lblEstadoConectado.Text = objAccesoBD.estadoConexion;
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FrmPrincipal frmPrincipal = new FrmPrincipal();
+            frmPrincipal.Show();
+        }
     }
 }

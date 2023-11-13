@@ -1,4 +1,5 @@
-﻿using System;
+﻿using pryChestaIE.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,8 +32,12 @@ namespace pryChestaIE
         string[] separarDatos;
         
         public void btnMostrar_Click(object sender, EventArgs e)
+
         {
-            StreamReader sr = new StreamReader("Listadeaseguradores.csv");
+            // Crear un DataTable para almacenar los datos
+            //DataTable dataTable = new DataTable();
+
+            StreamReader sr = new StreamReader("listaaseguradores.csv");
             
 
             
@@ -57,16 +62,7 @@ namespace pryChestaIE
 
             string DatoLeido;
 
-           // StreamReader AD = new StreamReader("Nuevo Proveedor");//Abrir AD 
-            //DatoLeido = AD.ReadLine();//Leer AD
-            //while (DatoLeido != null)
-           // {
-                
-               // grilla.Rows.Add(DatoLeido);
-                //DatoLeido = AD.ReadLine();//Leer AD
-           // }
-            //AD.Close();//Cerrar AD
-            //AD.Dispose();//Liberar el objeto 
+          
 
 
 
