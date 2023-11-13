@@ -26,7 +26,7 @@ namespace pryChestaIE
 
         public string datosTabla = "";
 
-        public void ClsLogs()
+        public void ConectarBD()
         {
             try
             {
@@ -46,6 +46,7 @@ namespace pryChestaIE
         {
             try
             {
+                ConectarBD();
                 comandologs = new OleDbCommand();
 
                 comandologs.Connection = conexionlogs;
@@ -118,7 +119,7 @@ namespace pryChestaIE
                 OleDbCommandBuilder constructor = new OleDbCommandBuilder(adaptadorlogs);
                 adaptadorlogs.Update(objDS, "Logs");
 
-                estadoConexion = "Registro exitoso de log";
+                estadoConexion = "Registro fallido de log";
             }
             catch (Exception error)
             {

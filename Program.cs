@@ -16,7 +16,7 @@ namespace pryChestaIE
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmConectar());
+            Application.Run(new FrmCargar());
         }
     }
 }

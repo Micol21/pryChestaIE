@@ -9,6 +9,7 @@ using System.IO;
 using System.Data.OleDb;
 using System.CodeDom.Compiler;
 using System.Data.Odbc;
+using System.Security.Cryptography.X509Certificates;
 
 namespace pryChestaIE
 {
@@ -17,42 +18,43 @@ namespace pryChestaIE
    
     internal class ClsUsuario
     {
-        OleDbConnection conexionusuario = new OleDbConnection();
-        OleDbCommand comandousuario = new OleDbCommand();
-        OleDbDataReader lectorusuario;
+        OleDbConnection conexionBD;// se declara un objeto de tipo oledbconnection
+        OleDbCommand comandoBD;//traer, borrar datos
+        OleDbDataReader lectorBD;//leer de inicio a fin registro de datos
+        OleDbDataAdapter adaptadorDS;
+        DataSet objDataSet = new DataSet();
 
-        OleDbDataAdapter adaptadorBD;
-        DataSet objDS = new DataSet();
 
-        
-
-        public string datosTabla = "";
-
+        string cadenaConexion = @"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:..\\..\\Resources\\BASE_USUARIOS.accdb";
         public string estadoConexion = "";
-        string rutaArchivo;
 
         public static bool login;
 
 
-        public ClsUsuario()
-        {
-            try
+        
+        
+            public void ConectarBD()
             {
-                rutaArchivo = @"..\\..\\Resources\\BASE_USUARIOS.accdb";
+                try
+                {
 
-                conexionusuario = new OleDbConnection();
-                conexionusuario.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + rutaArchivo;
-                conexionusuario.Open();
 
-                 
+                    conexionBD = new OleDbConnection();//instancio un objeto en memoria  de esa clase 
+                    conexionBD.ConnectionString = cadenaConexion;// a donde esta la conexion
+                    conexionBD.Open();//abro la base
+                    estadoConexion = "Conectado";
 
-                estadoConexion = "Conectado";
+
+
+
+                }
+                catch (Exception ex)
+                {
+                    estadoConexion = "Error: " + ex.Message;//devuelve mensaje de error
+
+                }
             }
-            catch (Exception error)
-            {
-                estadoConexion = error.Message;
-            }
-        }
+        
 
 
         
@@ -62,21 +64,21 @@ namespace pryChestaIE
         {
             try
             {
-
+                ConectarBD();
                 //Creo una instancia de la clase OleDbCommand para ejecutar los comandos en la base de datos
-                comandousuario = new OleDbCommand();
+                comandoBD = new OleDbCommand();
                 //Establezco la conexión, para que cuando se ejecute el comando lo opere en la base de datos que debe hacerse
-                comandousuario.Connection = conexionusuario;
+                comandoBD.Connection = conexionBD;
                 //Establezco el tipo de comando, con este comando le indico que voy a leer una tabla en específica
-                comandousuario.CommandType = System.Data.CommandType.TableDirect;
+                comandoBD.CommandType = System.Data.CommandType.TableDirect;
                 //Le digo que tabla voy a traer 
-                comandousuario.CommandText = "Usuarios";
+                comandoBD.CommandText = "Logs";
 
-                adaptadorBD = new OleDbDataAdapter(comandousuario);
+                adaptadorDS = new OleDbDataAdapter(comandoBD);
 
-                adaptadorBD.Fill(objDS, "Logs");
+                adaptadorDS.Fill(objDataSet, "Logs");
 
-                DataTable objTabla = objDS.Tables["Logs"];
+                DataTable objTabla = objDataSet.Tables["Logs"];
                 DataRow nuevoRegistro = objTabla.NewRow();
 
                 nuevoRegistro["Categoria"] = "Inicio Sesión";
@@ -85,8 +87,8 @@ namespace pryChestaIE
 
                 objTabla.Rows.Add(nuevoRegistro);
 
-                OleDbCommandBuilder constructor = new OleDbCommandBuilder(adaptadorBD);
-                adaptadorBD.Update(objDS, "Logs");
+                OleDbCommandBuilder constructor = new OleDbCommandBuilder(adaptadorDS);
+                adaptadorDS.Update(objDataSet, "Logs");
 
                 estadoConexion = "Registro exitoso de log";
             }
@@ -103,29 +105,26 @@ namespace pryChestaIE
         {
             try
             {
+                ConectarBD();
                 
-                conexionusuario.Open();
-                comandousuario = new OleDbCommand();
+                comandoBD = new OleDbCommand();
 
-                comandousuario.Connection = conexionusuario;
-                comandousuario.CommandType = System.Data.CommandType.TableDirect;
-                comandousuario.CommandText = "Usuarios";
+                comandoBD.Connection = conexionBD;
+                comandoBD.CommandType = System.Data.CommandType.TableDirect;
+                comandoBD.CommandText = "Usuarios";
 
-                lectorusuario = comandousuario.ExecuteReader();
+                lectorBD = comandoBD.ExecuteReader();
 
-                if (lectorusuario.HasRows)
+                if (lectorBD.HasRows)
                 {
-                    while (lectorusuario.Read())
+                    while (lectorBD.Read())
                     {
-                        if (lectorusuario[1].ToString() == FrmLogin.usuario && lectorusuario[2].ToString() == FrmLogin.contraseña)
+                        if (lectorBD[1].ToString() == nombreUser && lectorBD[2].ToString() == passUser)
                         {
-                            login  = true;
+                            estadoConexion = "Existe";
                             break;
                         }
-                        else
-                        {
-                            login = false;
-                        }
+                        
                     }
                 }
 

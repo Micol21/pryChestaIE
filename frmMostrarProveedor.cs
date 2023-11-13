@@ -19,7 +19,17 @@ namespace pryChestaIE
         {
             InitializeComponent();
             PopulateTreeView();
-            
+            this.KeyPreview = true; // Habilita la previsualización de teclas en el formulario
+            this.KeyDown += new KeyEventHandler(FrmMostrarProveedor_KeyDown); // Suscribe el método Form1_KeyDown al evento KeyDown
+
+        }
+
+        private void FrmMostrarProveedor_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close(); // Cierra el formulario cuando se presiona la tecla ESCAPE
+            }
         }
         private void PopulateTreeView()
         {

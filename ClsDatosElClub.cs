@@ -57,13 +57,22 @@ namespace pryChestaIE
 
                 grilla.Columns.Add("Nombre","Nombre");//el primero para la grilla el segundo para el codigo
                 grilla.Columns.Add("Apellido", "Apellido");
+                grilla.Columns.Add("Nacionalidad", "Nacionalidad");
+                grilla.Columns.Add("Edad", "Edad");
+                
+                
+                grilla.Columns.Add("Ingreso", "Ingreso");
                 grilla.Columns.Add("Puntaje", "Puntaje");
+                
+
+
+
 
 
                 while (lectorBD.Read())
                 {//si el lector puede leer hay datos, lee un registro (conjunto de datos heterogeneos) 
                     {
-                        grilla.Rows.Add(lectorBD[1], lectorBD[2], lectorBD[7]);
+                        grilla.Rows.Add(lectorBD[1], lectorBD[2], lectorBD[3], lectorBD[4], lectorBD[6], lectorBD[7]);
                     }
 
 
@@ -146,7 +155,7 @@ namespace pryChestaIE
 
         }
 
-        public void BuscarSocioPorApellido(string apellido)
+        public void BuscarSocioPorApellido(string apellido,DataGridView grilla)
         {
             try
             {
@@ -167,11 +176,10 @@ namespace pryChestaIE
                     {
                         if (lectorBD[2].ToString() == apellido)
                         {
-                            MessageBox.Show("SOCIO "+apellido+"EXISTE");
-
-                            break;
+                            grilla.Rows.Clear();
+                            grilla.Rows.Add(lectorBD[0], lectorBD[1], lectorBD[2], lectorBD[3], lectorBD[4], lectorBD[6], lectorBD[7]);
                         }
-                        else { MessageBox.Show("SOCIO NO EXISTE"); }
+                        
                     }
 
                    

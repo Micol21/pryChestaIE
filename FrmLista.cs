@@ -16,13 +16,23 @@ namespace pryChestaIE
         public FrmLista()
         {
             InitializeComponent();
+            this.KeyPreview = true; // Habilita la previsualización de teclas en el formulario
+            this.KeyDown += new KeyEventHandler(FrmLista_KeyDown); // Suscribe el método Form1_KeyDown al evento KeyDown
+        }
+
+        private void FrmLista_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close(); // Cierra el formulario cuando se presiona la tecla ESCAPE
+            }
         }
         string leerLinea;
         string[] separarDatos;
         
         public void btnMostrar_Click(object sender, EventArgs e)
         {
-            StreamReader sr = new StreamReader("baseproveedores.csv");
+            StreamReader sr = new StreamReader("Listadeaseguradores.csv");
             
 
             

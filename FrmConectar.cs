@@ -48,7 +48,7 @@ namespace pryChestaIE
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            objAccesoBD.BuscarSocioPorApellido(txtBuscar.Text);
+            objAccesoBD.BuscarSocioPorApellido(txtBuscar.Text,dgvSocios);
             txtBuscar.Clear();
         }
 
