@@ -190,6 +190,7 @@
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmConectar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmConectar";
             this.Load += new System.EventHandler(this.FrmConectar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSocios)).EndInit();

@@ -176,8 +176,9 @@ namespace pryChestaIE
                     {
                         if (lectorBD[2].ToString() == apellido)
                         {
+                            
                             grilla.Rows.Clear();
-                            grilla.Rows.Add(lectorBD[0], lectorBD[1], lectorBD[2], lectorBD[3], lectorBD[4], lectorBD[6], lectorBD[7]);
+                            grilla.Rows.Add( lectorBD[1], lectorBD[2], lectorBD[3], lectorBD[4], lectorBD[6], lectorBD[7]);
                         }
                         
                     }

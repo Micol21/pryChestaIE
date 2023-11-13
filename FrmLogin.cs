@@ -30,19 +30,19 @@ namespace pryChestaIE
         public static string usuario;
         public static string contraseña;
         int cantidad = 0;
-        private void btnIngresar_Click(object sender, EventArgs e)
+        public void btnIngresar_Click(object sender, EventArgs e)
         {
             ClsUsuario login = new ClsUsuario();
             login.ValidarUsuario(txtUsuario.Text, txtContraseña.Text);
 
-            
+            string usuario = txtUsuario.Text;
 
             clsLogs objLogs = new clsLogs();
 
 
             if (login.estadoConexion== "Existe")
             {
-                objLogs.LogInicioSesionExitoso();
+                objLogs.LogInicioSesionExitoso(); 
 
 
                 this.Hide();
@@ -55,7 +55,7 @@ namespace pryChestaIE
                 MessageBox.Show("Usuario o contraseña incorrecta, Ingreselos de nuevo porfavor");
                 txtContraseña.Clear();
                 txtUsuario.Clear();
-                //objLogs.RegistroLogInicioSesionFallido();
+                objLogs.LogInicioSesionFallido();
 
                 if (cantidad > 2)
                 {
