@@ -63,7 +63,8 @@ namespace pryChestaIE
                 
                 grilla.Columns.Add("Ingreso", "Ingreso");
                 grilla.Columns.Add("Puntaje", "Puntaje");
-                
+                grilla.Columns.Add("Estado", "Estado");
+
 
 
 
@@ -72,7 +73,7 @@ namespace pryChestaIE
                 while (lectorBD.Read())
                 {//si el lector puede leer hay datos, lee un registro (conjunto de datos heterogeneos) 
                     {
-                        grilla.Rows.Add(lectorBD[1], lectorBD[2], lectorBD[3], lectorBD[4], lectorBD[6], lectorBD[7]);
+                        grilla.Rows.Add(lectorBD[1], lectorBD[2], lectorBD[3], lectorBD[4], lectorBD[6], lectorBD[7],"Activo");
                     }
 
 
